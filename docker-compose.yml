@@ -1,0 +1,31 @@
+﻿services:
+  carrental.api:
+    image: carrental.api
+    container_name: CarRental.Api
+    build:
+      context: .
+      dockerfile: src/CarRental.Api/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=1q2w3E*
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    ports:
+      - "80"
+      - "5001:443"
+    depends_on: 
+      - car-rental-db
+  
+  car-rental-db:
+    image: postgres:latest
+    container_name: CarRental.Db
+    environment:
+      - POSTGRES_DB=carRental
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/database:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
