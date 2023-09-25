@@ -60,7 +60,7 @@ The project consists of the following key components:
 
 To set up and run the project on your local development environment with Docker Compose, follow these steps:
 
-1. Clone this repository to your local machine:
+Clone this repository to your local machine:
 
    ```shell
    git clone https://github.com/e2gun/car-rental.git
