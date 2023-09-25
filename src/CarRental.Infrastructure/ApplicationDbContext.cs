@@ -9,12 +9,12 @@ public sealed class ApplicationDbContext : DbContext, IUnitOfWork
 {
     private readonly IPublisher _publisher;
 
+   
     public ApplicationDbContext(DbContextOptions options, IPublisher publisher)
         : base(options)
     {
         _publisher = publisher;
     }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);

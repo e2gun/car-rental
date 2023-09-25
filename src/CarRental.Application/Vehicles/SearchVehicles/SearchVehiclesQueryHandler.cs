@@ -35,7 +35,7 @@ internal sealed class SearchVehiclesQueryHandler
         const string sql = """
             SELECT
                 a.id AS Id,
-                a.name AS Name,
+                a.plate AS Plate,
                 a.description AS Description,
                 a.price_amount AS Price,
                 a.price_currency AS Currency,

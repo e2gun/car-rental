@@ -40,8 +40,8 @@ public static class SeedDataExtensions
 
         const string sql = """
                            INSERT INTO public.vehicles
-                           (id, "name", description, address_country, address_state, address_map_location, address_city, address_street, price_amount, price_currency, amenities,created_on_utc, last_booked_on_utc)
-                           VALUES(@Id, @Name, @Description, @Country, @State, @City, @Street, @MapLocation, @PriceAmount, @PriceCurrency, @Amenities,@CreatedOnUtc, @LastBookedOn);
+                           (id, "plate", description, address_country, address_state, address_map_location, address_city, address_street, price_amount, price_currency, amenities,created_on_utc, last_booked_on_utc)
+                           VALUES(@Id, @Plate, @Description, @Country, @State, @City, @Street, @MapLocation, @PriceAmount, @PriceCurrency, @Amenities,@CreatedOnUtc, @LastBookedOn);
                            """;
 
         connection.Execute(sql, vehicles);
