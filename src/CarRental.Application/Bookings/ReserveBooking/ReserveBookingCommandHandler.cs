@@ -8,7 +8,7 @@ using CarRental.Domain.Customers;
 
 namespace CarRental.Application.Bookings.ReserveBooking;
 
-internal sealed class ReserveBookingCommandHandler : ICommandHandler<ReserveBookingCommand, Guid>
+public sealed class ReserveBookingCommandHandler : ICommandHandler<ReserveBookingCommand, Guid>
 {
     private readonly ICustomerRepository _customerRepository;
     private readonly IVehicleRepository _vehicleRepository;

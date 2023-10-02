@@ -1,6 +1,6 @@
 ﻿services:
-  carrental.api:
-    image: carrental.api
+  car-rental.api:
+    image: car-rental.api
     container_name: CarRental.Api
     build:
       context: .
